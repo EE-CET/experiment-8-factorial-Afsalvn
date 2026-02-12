@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "Example Case (n=5)",
+      "setup": "javac src/Factorial.java",
+      "run": "java -cp src Factorial",
+      "input": "5",
+      "output": "120",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Zero Factorial (n=0)",
+      "setup": "javac src/Factorial.java",
+      "run": "java -cp src Factorial",
+      "input": "0",
+      "output": "1",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Unit Factorial (n=1)",
+      "setup": "javac src/Factorial.java",
+      "run": "java -cp src Factorial",
+      "input": "1",
+      "output": "1",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    },
+    {
+      "name": "Larger Number (n=10)",
+      "setup": "javac src/Factorial.java",
+      "run": "java -cp src Factorial",
+      "input": "10",
+      "output": "3628800",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 25
+    }
+  ]
+}
