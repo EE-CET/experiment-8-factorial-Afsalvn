@@ -1,35 +1,40 @@
 
-
 import java.util.Scanner;
 
-public class Factorial {
-
-    /**
-     * Method to calculate factorial of n.
-     * Uses a long to handle larger results as factorial grows rapidly.
-     */
+// 1. Encapsulation: We bundle the factorial logic into its own class.
+class Factorial {
+    
+    // The separate function (method) to perform the operation.
     public long factorial(int n) {
-        if (n < 0) return 0; // Factorial not defined for negative numbers
-        
-        long result = 1;
-        for (int i = 1; i <= n; i++) {
-            result *= i;
+        if (n == 0 || n == 1) {
+            return 1;
         }
-        return result;
+        
+        long fact = 1;
+        for (int i = 2; i <= n; i++) {
+            fact *= i;
+        }
+        
+        return fact;
     }
+}
 
+public class Main {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         
-        if (sc.hasNextInt()) {
-            int n = sc.nextInt();
+        // Read the integer input
+        if (scanner.hasNextInt()) {
+            int n = scanner.nextInt();
             
-            // Creating an object to call the instance method factorial()
-            FactorialFinder finder = new FactorialFinder();
-            long output = finder.factorial(n);
+            // 2. Object Creation: We instantiate the class to use its behavior.
+            FactorialCalculator calculator = new FactorialCalculator();
             
-            System.out.println(output);
+            // 3. Method Invocation: We call the method on our new object.
+            long result = calculator.factorial(n);
+            System.out.println(result);
         }
-        sc.close();
+        
+        scanner.close();
     }
 }
